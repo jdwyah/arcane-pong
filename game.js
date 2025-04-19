@@ -1018,6 +1018,48 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Reset shadow
         ctx.shadowBlur = 0;
+        
+        // Draw message if active
+        if (messageTimer > 0) {
+            // Calculate animation values
+            let alpha = Math.min(1, messageTimer / 60); // Fade in/out
+            let scale = 1 + Math.sin(messageTimer * 0.1) * 0.1; // Pulse effect
+            let y = canvas.height / 3 - Math.abs(Math.sin(messageTimer * 0.05) * 20); // Float up and down
+            
+            // Save context state
+            ctx.save();
+            
+            // Apply text effects
+            ctx.globalAlpha = alpha;
+            ctx.translate(canvas.width / 2, y);
+            ctx.scale(scale, scale);
+            
+            // Draw message text with outline
+            ctx.font = 'bold 48px MedievalSharp';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // Draw glow effect
+            ctx.shadowBlur = 20;
+            ctx.shadowColor = messageColor;
+            
+            // Draw text
+            ctx.fillStyle = 'white';
+            ctx.fillText(messageText, 0, 0);
+            
+            // Draw outline
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = messageColor;
+            ctx.strokeText(messageText, 0, 0);
+            
+            // Restore context state
+            ctx.restore();
+            ctx.globalAlpha = 1;
+            ctx.shadowBlur = 0;
+            
+            // Decrease timer
+            messageTimer--;
+        }
     }
 
     function gameLoop() {
