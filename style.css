@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #12003e 0%, #3c0070 100%);
+    color: #f9f2d7;
+    font-family: 'MedievalSharp', cursive;
+    overflow: hidden;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+canvas {
+    border: 8px solid #651b9a;
+    border-radius: 8px;
+    box-shadow: 0 0 30px #9343ff, inset 0 0 15px #51229c;
+}
+
+.controls {
+    margin-top: 20px;
+    text-align: center;
+    background-color: rgba(50, 10, 80, 0.7);
+    padding: 15px 25px;
+    border-radius: 10px;
+    border: 2px solid #8a2be2;
+    box-shadow: 0 0 20px #9343ff;
+    max-width: 90%;
+}
+
+.controls p {
+    margin: 8px 0;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+@keyframes glowing {
+    0% { box-shadow: 0 0 15px #9343ff; }
+    50% { box-shadow: 0 0 30px #ff00ff; }
+    100% { box-shadow: 0 0 15px #9343ff; }
+}
+
+canvas {
+    animation: glowing 3s infinite;
+}
+
+.title {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #ff00ff;
+    color: #f9f2d7;
+    letter-spacing: 2px;
+}

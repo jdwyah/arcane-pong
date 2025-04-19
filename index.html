@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcane Pong Battle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="title animate__animated animate__pulse animate__infinite">Arcane Pong Battle</h1>
+        <canvas id="pongCanvas"></canvas>
+        <div class="controls animate__animated animate__fadeIn">
+            <p>⚔️ Player 1: Q (up), Z (down), A (attack spell), S (healing spell), D (upgrade laser)</p>
+            <p>🔮 Player 2: P (up), L (down), B (attack spell), N (healing spell), M (upgrade laser)</p>
+            <p>✨ Attack spells cost 1/4 mana and destroy segments of the opponent's magical barrier!</p>
+            <p>💯 Destroying all opponent segments gives you 50 bonus points!</p>
+            <p>💚 Healing spells require FULL mana and regenerate one of your own destroyed segments!</p>
+            <p>⬆️ Laser upgrade spells require FULL mana and permanently increase laser size by 20%!</p>
+            <p>🪄 Mana takes 20 seconds to fully recharge - choose wisely between attack and defense!</p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
